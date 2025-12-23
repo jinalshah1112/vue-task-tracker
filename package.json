@@ -1,0 +1,37 @@
+{
+  "name": "taskflow",
+  "version": "1.0.0",
+  "description": "TaskFlow - Vue 3 Task Tracker built with Quasar Framework",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "keywords": [
+    "vue3",
+    "quasar",
+    "task-tracker",
+    "typescript",
+    "pinia"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@quasar/extras": "^1.16.12",
+    "pinia": "^2.2.8",
+    "quasar": "^2.17.7",
+    "vue": "^3.4.0",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@quasar/vite-plugin": "^1.9.0",
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "sass": "^1.83.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vue-tsc": "^2.2.0"
+  }
+}

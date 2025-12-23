@@ -1,0 +1,126 @@
+// TaskFlow Main Styles
+// Custom SCSS for the Task Tracker application
+
+// Color palette - Catppuccin Mocha inspired
+$bg-base: #1e1e2e;
+$bg-surface: #313244;
+$bg-overlay: #45475a;
+$text-primary: #cdd6f4;
+$text-secondary: #a6adc8;
+$text-muted: #6c7086;
+$accent-primary: #6366f1;
+$accent-secondary: #8b5cf6;
+$accent-success: #22c55e;
+$accent-warning: #f59e0b;
+$accent-danger: #ef4444;
+
+// Typography
+$font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+$font-family-display: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+// Global styles
+body {
+  background: $bg-base;
+  color: $text-primary;
+  font-family: $font-family;
+  
+  // Subtle gradient background
+  background-image: 
+    radial-gradient(ellipse at top left, rgba($accent-primary, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba($accent-secondary, 0.06) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-surface;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $bg-overlay;
+  border-radius: 4px;
+  
+  &:hover {
+    background: #585b70; // Lighter shade of $bg-overlay
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+// Utility classes
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+// Task-specific styles
+.task-item {
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateX(4px);
+  }
+  
+  &.completed {
+    .task-text {
+      text-decoration: line-through;
+      color: $text-muted;
+    }
+  }
+}
+
+// Override Quasar dark mode
+.body--dark {
+  .q-card {
+    background: $bg-surface;
+  }
+  
+  .q-btn--flat {
+    &:hover {
+      background: rgba(white, 0.1);
+    }
+  }
+}
+
